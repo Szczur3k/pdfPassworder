@@ -1,3 +1,11 @@
 .label {
     -fx-text-fill: blue;
 }
+
+.myDialog .button-bar > .container {
+    -fx-alignment: center;
+}
+
+.myDialog .button-bar .button {
+    -fx-alignment: center;
+}

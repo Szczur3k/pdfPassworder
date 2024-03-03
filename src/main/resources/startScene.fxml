@@ -2,28 +2,36 @@
 
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.control.ToggleButton?>
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.text.Font?>
-<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0"
-      prefWidth="1000.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1"
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="399.0"
+      prefWidth="799.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1"
       fx:controller="com.pdfPassworder.Controller.StartSceneController">
     <children>
-        <Label fx:id="programName" alignment="CENTER" contentDisplay="CENTER" layoutX="486.0" layoutY="43.0"
-               text="Label" textAlignment="CENTER" textOverrun="CENTER_ELLIPSIS">
+        <Label fx:id="programName" alignment="CENTER" contentDisplay="CENTER" layoutX="-1.0" layoutY="41.0"
+               prefHeight="30.0" prefWidth="799.0" text="Label" textOverrun="CENTER_ELLIPSIS">
             <font>
                 <Font size="20.0"/>
             </font>
         </Label>
         <Label layoutX="159.0" layoutY="216.0" text="Ustaw haslo"/>
         <Label layoutX="159.0" layoutY="246.0" text="Powtorz haslo"/>
-        <ToggleButton fx:id="togglePassword" layoutX="46.0" layoutY="214.0" mnemonicParsing="false" text="pokaz haslo"/>
-        <Button fx:id="choosePath" layoutX="159.0" layoutY="131.0" mnemonicParsing="false" text="Wybierz sciezke"/>
-        <Button fx:id="savePath" layoutX="159.0" layoutY="173.0" mnemonicParsing="false" text="zapisz plik w "/>
-        <TextField fx:id="pdfLoadPath" layoutX="292.0" layoutY="131.0" prefHeight="25.0" prefWidth="284.0"/>
-        <TextField fx:id="pdfSavePath" layoutX="292.0" layoutY="173.0" prefHeight="25.0" prefWidth="284.0"/>
-        <TextField fx:id="password" layoutX="292.0" layoutY="212.0" prefHeight="25.0" prefWidth="284.0"/>
-        <TextField fx:id="passwordConfirm" layoutX="292.0" layoutY="242.0" prefHeight="25.0" prefWidth="284.0"/>
+        <ToggleButton fx:id="togglePassword" layoutX="46.0" layoutY="214.0" mnemonicParsing="false"
+                      onAction="#toggleVisiblePassword" text="pokaz haslo"/>
+        <Button fx:id="loadPathButton" layoutX="159.0" layoutY="131.0" mnemonicParsing="false"
+                onAction="#chooseLoadPdfPathAction" text="Wybierz plik PDF"/>
+        <Button fx:id="savePathButton" layoutX="159.0" layoutY="173.0" mnemonicParsing="false"
+                onAction="#chooseSavePdfPathAction" text="Sciezka zapisu PDF"/>
+        <TextField fx:id="pdfLoadPath" layoutX="292.0" layoutY="131.0" prefHeight="25.0" prefWidth="430.0"/>
+        <TextField fx:id="pdfSavePath" layoutX="292.0" layoutY="173.0" prefHeight="25.0" prefWidth="430.0"/>
+        <Button fx:id="savePdfButton" layoutX="292.0" layoutY="311.0" mnemonicParsing="false" onAction="#savePdf"
+                text="Zapisz PDF"/>
+        <PasswordField fx:id="password" layoutX="291.0" layoutY="212.0"/>
+        <PasswordField fx:id="passwordConfirm" layoutX="291.0" layoutY="242.0"/>
+        <TextField fx:id="passwordTextField" layoutX="291.0" layoutY="212.0" visible="false"/>
+        <TextField fx:id="passwordConfirmTextField" layoutX="291.0" layoutY="242.0" visible="false"/>
     </children>
 </Pane>
